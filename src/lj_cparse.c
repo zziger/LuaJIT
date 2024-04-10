@@ -1204,8 +1204,8 @@ static CTypeID cp_struct_name(CPState *cp, CPDecl *sdecl, CTInfo info)
     ct->size = CTSIZE_INVALID;
   }
   if (cp->tok == '{') {
-    if (ct->size != CTSIZE_INVALID || ct->sib)
-      cp_errmsg(cp, 0, LJ_ERR_FFI_REDEF, strdata(gco2str(gcref(ct->name))));
+    // if (ct->size != CTSIZE_INVALID || ct->sib)
+    //   cp_errmsg(cp, 0, LJ_ERR_FFI_REDEF, strdata(gco2str(gcref(ct->name))));
     ct->sib = 1;  /* Indicate the type is currently being defined. */
   }
   return sid;
