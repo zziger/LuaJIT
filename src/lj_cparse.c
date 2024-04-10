@@ -1186,8 +1186,8 @@ static CTypeID cp_struct_name(CPState *cp, CPDecl *sdecl, CTInfo info)
     if (cp->val.id) {  /* Name of existing struct/union/enum. */
       sid = cp->val.id;
       ct = cp->ct;
-      if ((ct->info ^ info) & (CTMASK_NUM|CTF_UNION))  /* Wrong type. */
-	cp_errmsg(cp, 0, LJ_ERR_FFI_REDEF, strdata(gco2str(gcref(ct->name))));
+ //      if ((ct->info ^ info) & (CTMASK_NUM|CTF_UNION))  /* Wrong type. */
+	// cp_errmsg(cp, 0, LJ_ERR_FFI_REDEF, strdata(gco2str(gcref(ct->name))));
     } else {  /* Create named, incomplete struct/union/enum. */
       if ((cp->mode & CPARSE_MODE_NOIMPLICIT))
 	cp_errmsg(cp, 0, LJ_ERR_FFI_BADTAG, strdata(cp->str));
