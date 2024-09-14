@@ -1406,7 +1406,7 @@ static CTypeID cp_decl_enum(CPState *cp, CPDecl *sdecl)
     do {
       GCstr *name = cp->str;
       if (cp->tok != CTOK_IDENT) cp_err_token(cp, CTOK_IDENT);
-      if (cp->val.id) cp_errmsg(cp, 0, LJ_ERR_FFI_REDEF, strdata(name));
+//      if (cp->val.id) cp_errmsg(cp, 0, LJ_ERR_FFI_REDEF, strdata(name));
       cp_next(cp);
       if (cp_opt(cp, '=')) {
 	cp_expr_kint(cp, &k);
